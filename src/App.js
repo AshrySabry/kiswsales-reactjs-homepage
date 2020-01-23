@@ -1,19 +1,15 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
-import CenteredGrid from './components/CenteredGrid';
+import SimpleCard from './components/SimpleCard';
 
 //import { Container, Grid } from '@material-ui/core';
 
 function App() {
   return (
-      <div className="bg" >
+      <div className= "bg" >
         <NavBar />
-        <div className="tx">
-          <h1 >
-            Welcome to Kiswire Sales Web System
-          </h1>
-        </div>
+        <SimpleCard />
       </div>
   );
 }

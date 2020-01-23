@@ -3,7 +3,8 @@ body, html {
 }
 
 .bg {
-  background-image: url("components/wallpaper2.jpg");
+  background-image: url("components/572066.jpg");
+  background-size: contain;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,14 +13,6 @@ body, html {
 
 }
 
-.tx h1 {
-  justify-content: center;
-  margin-top: 14rem;
-  color: blanchedalmond;
-  text-align: center;
-  animation: backwards;
-
-}
 
 .App-logo {
   height: 40vmin;

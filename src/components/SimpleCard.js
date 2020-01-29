@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider,makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -11,7 +11,20 @@ import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 import Typography from '@material-ui/core/Typography';
-import './SimpleCard.css';
+//import './SimpleCard.css';
+
+const theme = createMuiTheme();
+
+theme.typography.h5 = {
+  fontSize: '0.8rem',
+  '@media (min-width:600px)': {
+    fontSize: '1.0rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.2rem',
+  },
+  
+};
 
 const useStyles = makeStyles( theme => ({
 
@@ -33,18 +46,25 @@ const useStyles = makeStyles( theme => ({
       maxWidth: 450,
       margin: 'auto',
       marginTop: 80,
-    
     },
     media: {
       height: 300,
     },
 
-  }));
+    title: {
+    fontFamily: 'Nunito',
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+
+  }}));
 
 const SimpleCard = (props) =>  {
   const classes = useStyles();
   const {width} = props;
   return (
+    <ThemeProvider theme={theme}>
     <Grid container className={classes.root} spacing={2}>
     <Grid item xs={12} margin="auto">
       <Grid container justify="center" >
@@ -64,24 +84,16 @@ const SimpleCard = (props) =>  {
           height="200"
           image= {require ("./DJI_0031.JPG")}
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" className="text1-center">
+        <CardContent className={classes.title}>
+          <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
           Kiswire SEAHQ Sales System
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions display={{ md: 'none' }} m={1}>
-        <Button size="small" color="primary" position="center" className="text1-center" >
-          Login
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
     </Grid>
   </Grid>
-    
+  </ThemeProvider>  
   );
 }
 

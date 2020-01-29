@@ -120,14 +120,14 @@ const NavBar = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem onClick={handleMenuClose} className={classes.font}>Login</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Sales</MenuItem>
+      <MenuItem onClick={handleMenuClose} className={classes.font}>Sales</MenuItem>
     </Menu>
   );
 
   return (
     <div className={classes.grow}>
       <ThemeProvider theme={theme}>
-        <AppBar position="static">
+        <AppBar position="static" style={{ background: '#252930' }}>
             <Toolbar>
             <Typography variant="h5" className={classes.font}>
                 Kiswire SEAHQ Sales System
@@ -135,8 +135,8 @@ const NavBar = () => {
             
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-            <Button color="inherit" className={classes.title}>Login</Button>
-            <Button color="inherit" className={classes.title}>Sales</Button>
+            <Button color="inherit" className={classes.font}>Login</Button>
+            <Button color="inherit" className={classes.font}>Sales</Button>
                 {/* <IconButton
                 edge="end"
                 aria-label="account of current user"

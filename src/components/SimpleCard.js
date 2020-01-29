@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 import Typography from '@material-ui/core/Typography';
+import { green } from '@material-ui/core/colors';
 //import './SimpleCard.css';
 
 const theme = createMuiTheme();
@@ -45,18 +46,18 @@ const useStyles = makeStyles( theme => ({
       //margin: theme.spacing(1),
       maxWidth: 450,
       margin: 'auto',
-      marginTop: 80,
+      marginTop: 120,
     },
     media: {
       height: 300,
     },
 
     title: {
-    fontFamily: 'Nunito',
     display: 'none',
     [theme.breakpoints.up('sm')]: {
-      display: 'block',
+    display: 'block',
     },
+    fontFamily: 'Nunito',
 
   }}));
 
@@ -82,13 +83,13 @@ const SimpleCard = (props) =>  {
           component="img"
           alt="Contemplative Reptile"
           height="200"
-          image= {require ("./DJI_0031.JPG")}
+          image= {require ("./kiswire.PNG")}
         />
-        <CardContent className={classes.title}>
-          <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
+        {/* <CardContent className={classes.title}>
+          <Typography gutterBottom variant="h5" component="h2" >
           Kiswire SEAHQ Sales System
           </Typography>
-        </CardContent>
+        </CardContent> */}
       </CardActionArea>
     </Card>
     </Grid>
